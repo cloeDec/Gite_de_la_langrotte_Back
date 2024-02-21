@@ -91,7 +91,8 @@ app.post("/mail", (req, res) => {
     });
 });
 
-app.use("/admin", admin); // remplacer par = app.use("/admin", checkTokenMiddleware, admin) pour proteger la page
+//app.use("/admin", admin);  remplacer par = app.use("/admin", checkTokenMiddleware, admin) pour proteger la page
+app.use("/admin", checkTokenMiddleware, admin)
 
 /*Route extraction*/
 app.use("/gites", gites);
