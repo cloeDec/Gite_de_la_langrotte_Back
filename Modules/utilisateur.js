@@ -16,4 +16,14 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:ID_Uti", (req, res) => {
+  utilisateurService.fetchUtilisateurById(req.params.ID_Uti).then(result => {
+      res.status(200)
+      res.json(result[0]);
+  }).catch(err => {
+      console.error("Oops...", err);
+      res.json({"message" : "Error" + err.sqlMessage})
+  });
+});
+
 module.exports = router;

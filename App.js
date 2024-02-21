@@ -5,6 +5,7 @@ const equipement = require("./Modules/equipement");
 const image = require("./Modules/image");
 const admin = require("./Modules/admin");
 const reservation = require("./Modules/reservation");
+const utilisateur = require("./Modules/utilisateur");
 const client = require("./Modules/client");
 const app = express();
 const port = 3000;
@@ -99,6 +100,7 @@ app.use("/equipement", equipement);
 app.use("/image", image);
 app.use("/reservation", reservation);
 app.use("/client", client);
+app.use("/utilisateur", utilisateur);
 
 app.listen(port, () => {
   console.log(`Application à l'écoute sur le port http://127.0.0.1:${port}/ !`);
